@@ -68,8 +68,8 @@ searchRouter.get("/album/:name", async (req, res) => {
 searchRouter.get("/song/:name", async (req, res) => {
 	const songName = req.params.name;
 	const token = await getAuthToken();
-	console.log("Time to search for album: ", songName);
-	await fetch(`https://api.spotify.com/v1/search/?q=${songName}&type=song`, {
+	console.log("Time to search for song: ", songName);
+	await fetch(`https://api.spotify.com/v1/search/?q=${songName}&type=track`, {
 		method: "GET",
 		headers: {
 			Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ searchRouter.get("/song/:name", async (req, res) => {
 	})
 		.then((response) => {
 			if (!response.ok) {
-				throw new Error("Failed to fetch artist");
+				throw new Error("Failed to fetch song");
 			}
 			return response.json();
 		})

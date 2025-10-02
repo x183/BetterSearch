@@ -11,4 +11,12 @@ type Artist = {
 	images: { url: string; height: number; width: number }[];
 };
 
-export type { Album, Artist };
+type Song = {
+	name: string;
+	artists: { name: string; link: string }[];
+	images: { url: string; height: number; width: number }[];
+	release_date: string;
+	album: Album;
+};
+
+export type { Album, Artist, Song };
