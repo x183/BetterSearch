@@ -28,6 +28,7 @@ searchRouter.get("/artist/:name", async (req, res) => {
 				href: artist.href,
 				name: artist.name,
 				images: artist.images,
+				followers: artist.followers.total,
 			}));
 		})
 		.then((data) => res.status(200).json(data));
