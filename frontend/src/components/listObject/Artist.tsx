@@ -29,6 +29,9 @@ export const ArtistCard = (artist: Artist) => {
 				<li>
 					<p>Followers: {prettyNum(data.followers, false)}</p>
 				</li>
+				{/*<li>
+					<button onclick={}> Start Playing</button>
+					</li>*/}
 			</ul>
 		</div>
 	);

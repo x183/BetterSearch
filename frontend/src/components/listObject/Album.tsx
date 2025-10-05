@@ -3,6 +3,7 @@
 import { Album } from "@/types/dataTypes";
 import Image from "next/image";
 import styles from "./Card.module.css";
+import { startPlaying } from "@/fetches/callApi";
 
 export const AlbumCard = (album: Album) => {
 	const data: Album = album.album;
@@ -27,6 +28,11 @@ export const AlbumCard = (album: Album) => {
 							: data.artists.map((artist) => artist.name).join(", ")}
 						{` (${data.release_date.split("-")[0]})`}
 					</p>
+				</li>
+				<li>
+					<button onClick={() => startPlaying(data.uri, "album")}>
+						Start playing
+					</button>
 				</li>
 			</ul>
 		</div>

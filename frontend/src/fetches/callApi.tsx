@@ -10,4 +10,15 @@ export const getSearchResults = async (query: string, type: SearchType) => {
 	}
 	const jsData = await res.json();
 	return jsData;
-}
+};
+
+export const startPlaying = async (uri: string, type: SearchType) => {
+	const res = await fetch(`api/play/${type}/${uri}`, {
+		method: "GET",
+	});
+	if (!res.ok) {
+		console.log("Failed to start playing");
+		return "";
+	}
+	return "OK";
+};

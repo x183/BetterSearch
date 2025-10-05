@@ -55,6 +55,7 @@ searchRouter.get("/album/:name", async (req, res) => {
 			res.status(200).json(
 				data.albums.items.map((album: any) => ({
 					name: album.name,
+					uri: album.uri,
 					artists: album.artists.map((artist: any) => ({
 						name: artist.name,
 						link: artist.href,
